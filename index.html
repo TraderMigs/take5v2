@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Take5 Pickleball Break | Free 5-Minute Pickleball Mini-Game & Court Finder</title>
-  <meta name="description" content="Play Take5 Pickleball Break, a free 5-minute pickleball mini-game with a simple court finder to search pickleball games and courts near you." />
-  <meta name="keywords" content="pickleball game, free pickleball game, pickleball mini game, pickleball court finder, pickleball near me, pickleball games near me, take five break, Take5 Pickleball Break" />
+  <title>Take5 Pickleball Break | Free Pickleball Game, Court Finder & Beginner Guide</title>
+  <meta name="description" content="Play Take5 Pickleball Break, a free 5-minute pickleball mini-game with a court finder, beginner pickleball guide, rules, tips, FAQs, and local search for pickleball courts near you." />
+  <meta name="keywords" content="pickleball game, free pickleball game, pickleball mini game, pickleball court finder, pickleball near me, pickleball courts near me, pickleball games near me, pickleball rules, pickleball beginner guide, take five break, Take5 Pickleball Break" />
   <meta name="robots" content="index, follow, max-image-preview:large" />
   <meta name="theme-color" content="#050807" />
   <link rel="canonical" href="https://take5.cc/" />
@@ -15,20 +15,22 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://take5.cc/" />
   <meta property="og:title" content="Take5 Pickleball Break" />
-  <meta property="og:description" content="A free 5-minute pickleball mini-game and court finder built for quick mental breaks." />
+  <meta property="og:description" content="A free 5-minute pickleball mini-game, court finder, and beginner guide built for quick mental breaks." />
   <meta property="og:site_name" content="Take5 Pickleball Break" />
   <meta property="og:image" content="https://take5.cc/og.svg" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Take5 Pickleball Break" />
-  <meta name="twitter:description" content="A free 5-minute pickleball mini-game and court finder." />
+  <meta name="twitter:description" content="A free 5-minute pickleball mini-game, court finder, and beginner guide." />
   <meta name="twitter:image" content="https://take5.cc/og.svg" />
 
   <link rel="preconnect" href="https://www.google.com" />
+  <link rel="preconnect" href="https://ziqwbbthwfhjitcagzmn.supabase.co" />
   <link rel="stylesheet" href="/styles.css" />
   <link rel="stylesheet" href="/mobile-ui.css" />
   <link rel="stylesheet" href="/search-effects.css" />
   <link rel="stylesheet" href="/search-intent.css" />
+  <link rel="stylesheet" href="/seo-upgrades.css" />
 
   <script type="application/ld+json">
   {
@@ -38,12 +40,52 @@
     "url": "https://take5.cc/",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Any",
-    "description": "A free 5-minute pickleball mini-game and court finder for quick mental breaks.",
+    "description": "A free 5-minute pickleball mini-game, court finder, and beginner guide for quick mental breaks.",
     "offers": {
       "@type": "Offer",
       "price": "0",
       "priceCurrency": "USD"
     }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I find pickleball courts near me?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Use the Take5 court finder to search for pickleball courts, open play, games, clubs, lessons, and tournaments near your city or current location."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is Take5 Pickleball Break free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Take5 Pickleball Break is a free browser mini-game and pickleball court finder."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What do beginners need to know about pickleball?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Beginners should learn the serve, two-bounce rule, kitchen line, basic scoring, controlled returns, and how to find local open play sessions."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use Take5 on my phone?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Take5 Pickleball Break works in mobile and desktop browsers."
+        }
+      }
+    ]
   }
   </script>
 </head>
@@ -62,7 +104,14 @@
     <nav class="top-links" aria-label="Primary navigation">
       <a href="#play">Play</a>
       <a class="find-courts-link" href="#courtSearch">Find Courts</a>
+      <a href="#guide">Guide</a>
+      <a href="#faq">FAQ</a>
       <a href="https://www.nuroni.dev/" target="_blank" rel="noopener noreferrer">Build Apps</a>
+      <div class="visitor-counter" aria-label="Visitor counter">
+        <span>Today: <strong id="visitorsToday">—</strong></span>
+        <span class="visitor-divider">|</span>
+        <span>Total: <strong id="visitorsLifetime">—</strong></span>
+      </div>
     </nav>
   </header>
 
@@ -152,6 +201,111 @@
       </article>
     </section>
 
+    <section class="quick-guide" id="guide" aria-labelledby="guide-title">
+      <div class="guide-panel">
+        <h2 id="guide-title">Pickleball Quick Guide</h2>
+        <p class="guide-intro">New to pickleball or just looking for a quick refresher? This guide explains the basics in plain English so you can understand the game, search for places to play, and show up with a little more confidence.</p>
+        <div class="guide-grid">
+          <article class="guide-item">
+            <h3>What is pickleball?</h3>
+            <p>Pickleball is a paddle sport that blends parts of tennis, badminton, and ping-pong. Players hit a plastic ball over a low net on a smaller court, usually as singles or doubles.</p>
+          </article>
+          <article class="guide-item">
+            <h3>Basic rules</h3>
+            <p>Serve underhand, let the ball bounce once on each side after the serve, avoid volleying inside the kitchen, and keep the ball in bounds. Most casual games are simple once you learn the flow.</p>
+          </article>
+          <article class="guide-item">
+            <h3>Beginner scoring</h3>
+            <p>Only the serving side usually scores. Games are commonly played to 11, and you normally need to win by 2. Doubles scoring can feel weird at first, but it gets easier after a few games.</p>
+          </article>
+          <article class="guide-item">
+            <h3>The kitchen</h3>
+            <p>The kitchen is the non-volley zone near the net. You can step into it, but you cannot volley the ball while standing in it. This rule keeps the game from turning into constant net smashes.</p>
+          </article>
+          <article class="guide-item">
+            <h3>How to find games</h3>
+            <p>Search for pickleball courts, open play, clubs, leagues, lessons, or tournaments in your city. Parks, gyms, community centers, resorts, and sports clubs often host beginner-friendly sessions.</p>
+          </article>
+          <article class="guide-item">
+            <h3>Beginner mistakes</h3>
+            <p>Most beginners swing too hard, rush the net, ignore the kitchen, or forget to control the return. Keep the ball in play first. Power matters less than placement and patience.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="location-section" aria-labelledby="location-title">
+      <div class="location-panel">
+        <h2 id="location-title">Find Pickleball Near You</h2>
+        <p class="location-intro">Use the search bar above or jump straight into popular pickleball searches. These open map searches focused on pickleball courts, games, clubs, lessons, and open play.</p>
+        <div class="location-grid">
+          <article class="location-item">
+            <h3>Pickleball courts near me</h3>
+            <p>Find nearby courts, parks, gyms, and recreation centers that may offer pickleball.</p>
+            <a href="https://www.google.com/maps/search/?api=1&query=pickleball%20courts%20near%20me" target="_blank" rel="noopener noreferrer">Search courts</a>
+          </article>
+          <article class="location-item">
+            <h3>Open play near me</h3>
+            <p>Look for casual pickleball games, meetups, and open play sessions near your area.</p>
+            <a href="https://www.google.com/maps/search/?api=1&query=pickleball%20open%20play%20near%20me" target="_blank" rel="noopener noreferrer">Search open play</a>
+          </article>
+          <article class="location-item">
+            <h3>Pickleball lessons near me</h3>
+            <p>Search for coaches, beginner lessons, clinics, and training sessions.</p>
+            <a href="https://www.google.com/maps/search/?api=1&query=pickleball%20lessons%20near%20me" target="_blank" rel="noopener noreferrer">Search lessons</a>
+          </article>
+          <article class="location-item">
+            <h3>Pickleball in Bangkok</h3>
+            <p>Search for pickleball courts, clubs, games, and lessons around Bangkok.</p>
+            <a href="https://www.google.com/maps/search/?api=1&query=pickleball%20courts%20games%20clubs%20lessons%20Bangkok" target="_blank" rel="noopener noreferrer">Search Bangkok</a>
+          </article>
+          <article class="location-item">
+            <h3>Pickleball in Pattaya</h3>
+            <p>Search for pickleball courts, open play, and clubs around Pattaya.</p>
+            <a href="https://www.google.com/maps/search/?api=1&query=pickleball%20courts%20games%20clubs%20lessons%20Pattaya" target="_blank" rel="noopener noreferrer">Search Pattaya</a>
+          </article>
+          <article class="location-item">
+            <h3>Pickleball in Thailand</h3>
+            <p>Search Thailand-wide pickleball courts, clubs, games, lessons, and events.</p>
+            <a href="https://www.google.com/maps/search/?api=1&query=pickleball%20courts%20games%20clubs%20lessons%20Thailand" target="_blank" rel="noopener noreferrer">Search Thailand</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq-section" id="faq" aria-labelledby="faq-title">
+      <div class="faq-panel">
+        <h2 id="faq-title">Pickleball FAQ</h2>
+        <p class="faq-intro">Fast answers for new players searching for pickleball courts, games, and rules.</p>
+        <div class="faq-grid">
+          <article class="faq-item">
+            <h3>How do I find pickleball courts near me?</h3>
+            <p>Use the Take5 court finder and type your city, neighborhood, or country. The search automatically focuses on pickleball courts, clubs, open play, lessons, and local games.</p>
+          </article>
+          <article class="faq-item">
+            <h3>Can beginners play pickleball?</h3>
+            <p>Yes. Pickleball is popular with beginners because the court is smaller, rallies can start slowly, and many clubs offer open play or beginner sessions.</p>
+          </article>
+          <article class="faq-item">
+            <h3>What equipment do I need?</h3>
+            <p>You need a paddle, pickleball balls, comfortable shoes, and a court. Many beginner groups or clubs may have loaner paddles available.</p>
+          </article>
+          <article class="faq-item">
+            <h3>What is open play?</h3>
+            <p>Open play means players can rotate into games without needing a full private group. It is one of the easiest ways to meet local pickleball players.</p>
+          </article>
+          <article class="faq-item">
+            <h3>Is pickleball good for a quick break?</h3>
+            <p>Yes. A short rally, drill, or mini-game can help you reset, move your body, and clear your head without needing a long workout.</p>
+          </article>
+          <article class="faq-item">
+            <h3>Does Take5 track my location?</h3>
+            <p>No automatic location tracking runs on page load. Location is only requested if you tap the location button in the court finder.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section class="cta-strip" aria-label="Learn to build apps call to action">
       <p>Want to build simple apps like this?</p>
       <a href="https://www.nuroni.dev/" target="_blank" rel="noopener noreferrer">Learn AI app-building from zero at Nuroni.dev</a>
@@ -166,5 +320,6 @@
   <script src="/game.js" defer></script>
   <script src="/pickleball-search.js" defer></script>
   <script src="/search-effects.js" defer></script>
+  <script src="/visitor-counter.js" defer></script>
 </body>
 </html>
