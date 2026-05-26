@@ -26,7 +26,7 @@
     power: 0,
     swingFlash: 0,
     particles: [],
-    paddle: { x: 0.5, y: 0.78, vx: 0, vy: 0 },
+    paddle: { x: 0.5, y: 0.82, vx: 0, vy: 0 },
     ball: createBall(),
   };
 
@@ -35,7 +35,7 @@
   function createBall() {
     return {
       x: 0.5,
-      y: 0.19,
+      y: 0.22,
       z: 0,
       size: 0.025,
       speed: 0.18,
@@ -84,7 +84,7 @@
     state.power = 0;
     state.particles = [];
     state.paddle.x = 0.5;
-    state.paddle.y = 0.78;
+    state.paddle.y = 0.82;
     updateHud();
     serveBall(true);
     setMessage('Track the ball. Hold click or space to charge. Release inside the hit zone.');
@@ -93,8 +93,8 @@
 
   function serveBall(firstServe = false) {
     const ball = state.ball;
-    ball.x = rand(0.38, 0.62);
-    ball.y = 0.19;
+    ball.x = rand(0.42, 0.58);
+    ball.y = 0.22;
     ball.z = 0;
     ball.size = 0.018;
     ball.speed = firstServe ? 0.16 : rand(0.17, 0.24);
@@ -137,7 +137,7 @@
 
     const dx = Math.abs(ball.x - state.paddle.x);
     const dy = Math.abs(ball.y - state.paddle.y);
-    const inZone = ball.y > 0.62 && ball.y < 0.93 && dx < 0.14 && dy < 0.18;
+    const inZone = ball.y > 0.62 && ball.y < 0.94 && dx < 0.15 && dy < 0.18;
 
     if (!inZone) {
       state.streak = 0;
@@ -222,8 +222,8 @@
 
     if (ax || ay) {
       const len = Math.hypot(ax, ay) || 1;
-      state.paddle.x = clamp(state.paddle.x + (ax / len) * speed * dt, 0.14, 0.86);
-      state.paddle.y = clamp(state.paddle.y + (ay / len) * speed * dt, 0.56, 0.94);
+      state.paddle.x = clamp(state.paddle.x + (ax / len) * speed * dt, 0.1, 0.9);
+      state.paddle.y = clamp(state.paddle.y + (ay / len) * speed * dt, 0.58, 0.95);
     }
 
     state.swingFlash = Math.max(0, state.swingFlash - dt * 4.5);
@@ -235,7 +235,7 @@
 
     if (!ball.returning) {
       ball.y += ball.speed * dt;
-      const t = clamp((ball.y - 0.18) / 0.72, 0, 1);
+      const t = clamp((ball.y - 0.22) / 0.72, 0, 1);
       ball.x += (ball.targetX - ball.x) * 0.9 * dt + ball.drift * dt * t;
       ball.size = 0.018 + t * 0.055;
 
@@ -261,36 +261,38 @@
 
   function courtPoint(x, y) {
     const center = state.width / 2;
-    const topY = state.height * 0.17;
-    const bottomY = state.height * 0.97;
-    const progress = clamp((y - topY) / (bottomY - topY), 0, 1);
-    const halfTop = state.width * 0.12;
-    const halfBottom = state.width * 0.44;
-    const half = halfTop + (halfBottom - halfTop) * progress;
+    const topY = state.height * 0.08;
+    const bottomY = state.height * 0.96;
+    const progress = clamp(y, 0, 1);
+    const perspective = Math.pow(progress, 0.92);
+    const halfTop = state.width * 0.26;
+    const halfBottom = state.width * 0.48;
+    const half = halfTop + (halfBottom - halfTop) * perspective;
     const px = center + (x - 0.5) * half * 2;
     const py = topY + progress * (bottomY - topY);
-    return { x: px, y: py, half };
+    return { x: px, y: py, half, progress };
   }
 
   function drawCourt() {
-    const topLeft = courtPoint(0.18, 0.17);
-    const topRight = courtPoint(0.82, 0.17);
-    const bottomLeft = courtPoint(0.03, 0.97);
-    const bottomRight = courtPoint(0.97, 0.97);
-    const centerTop = courtPoint(0.5, 0.17);
-    const centerBottom = courtPoint(0.5, 0.97);
-    const netA1 = courtPoint(0.15, 0.43);
-    const netA2 = courtPoint(0.85, 0.43);
-    const netB1 = courtPoint(0.15, 0.455);
-    const netB2 = courtPoint(0.85, 0.455);
+    const topLeft = courtPoint(0, 0.08);
+    const topRight = courtPoint(1, 0.08);
+    const bottomLeft = courtPoint(0, 1);
+    const bottomRight = courtPoint(1, 1);
+    const netA1 = courtPoint(0.02, 0.42);
+    const netA2 = courtPoint(0.98, 0.42);
+    const netB1 = courtPoint(0.02, 0.495);
+    const netB2 = courtPoint(0.98, 0.495);
+    const lowerCenterA = courtPoint(0.5, 0.495);
+    const lowerCenterB = courtPoint(0.5, 1);
 
     ctx.save();
-    ctx.lineCap = 'round';
-    ctx.lineJoin = 'round';
-    ctx.shadowColor = 'rgba(235, 255, 248, 0.48)';
-    ctx.shadowBlur = 16;
-    ctx.strokeStyle = 'rgba(235, 255, 248, 0.72)';
-    ctx.lineWidth = 2;
+    ctx.lineCap = 'square';
+    ctx.lineJoin = 'miter';
+
+    ctx.shadowColor = 'rgba(235, 255, 248, 0.28)';
+    ctx.shadowBlur = 8;
+    ctx.strokeStyle = 'rgba(235, 255, 248, 0.48)';
+    ctx.lineWidth = 3;
 
     ctx.beginPath();
     ctx.moveTo(topLeft.x, topLeft.y);
@@ -300,17 +302,19 @@
     ctx.closePath();
     ctx.stroke();
 
-    ctx.globalAlpha = 0.48;
+    ctx.globalAlpha = 0.28;
+    ctx.lineWidth = 2;
+    ctx.shadowBlur = 4;
     ctx.beginPath();
-    ctx.moveTo(centerTop.x, centerTop.y);
-    ctx.lineTo(centerBottom.x, centerBottom.y);
+    ctx.moveTo(lowerCenterA.x, lowerCenterA.y);
+    ctx.lineTo(lowerCenterB.x, lowerCenterB.y);
     ctx.stroke();
 
     ctx.globalAlpha = 1;
-    ctx.shadowColor = 'rgba(89, 255, 154, 0.6)';
-    ctx.shadowBlur = 18;
+    ctx.shadowColor = 'rgba(89, 255, 154, 0.72)';
+    ctx.shadowBlur = 13;
     ctx.strokeStyle = 'rgba(89, 255, 154, 0.9)';
-    ctx.lineWidth = 3;
+    ctx.lineWidth = 4;
     ctx.beginPath();
     ctx.moveTo(netA1.x, netA1.y);
     ctx.lineTo(netA2.x, netA2.y);
@@ -348,6 +352,45 @@
     ctx.beginPath();
     ctx.arc(0, 0, radius * 0.62, Math.PI - 0.8, Math.PI + 0.8);
     ctx.stroke();
+    ctx.restore();
+  }
+
+  function drawOpponentPaddle() {
+    const ball = state.ball;
+    const p = courtPoint(clamp(ball.x + 0.08, 0.32, 0.68), 0.23);
+    const scale = clamp(state.width / 1450, 0.34, 0.56);
+
+    ctx.save();
+    ctx.translate(p.x, p.y);
+    ctx.rotate(0.15);
+    ctx.globalAlpha = 0.95;
+    ctx.shadowColor = 'rgba(89, 255, 154, 0.22)';
+    ctx.shadowBlur = 14;
+
+    const paddleGradient = ctx.createLinearGradient(-36 * scale, -46 * scale, 36 * scale, 36 * scale);
+    paddleGradient.addColorStop(0, '#264a36');
+    paddleGradient.addColorStop(0.56, '#72c179');
+    paddleGradient.addColorStop(1, '#102015');
+    ctx.fillStyle = paddleGradient;
+    ctx.strokeStyle = 'rgba(239, 255, 248, 0.52)';
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.ellipse(0, -32 * scale, 42 * scale, 50 * scale, 0.08, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.stroke();
+
+    ctx.shadowBlur = 0;
+    ctx.fillStyle = '#1b1714';
+    ctx.strokeStyle = 'rgba(239, 255, 248, 0.22)';
+    ctx.beginPath();
+    ctx.roundRect(-12 * scale, 7 * scale, 24 * scale, 34 * scale, 9 * scale);
+    ctx.fill();
+    ctx.stroke();
+
+    ctx.fillStyle = '#10100f';
+    ctx.beginPath();
+    ctx.roundRect(-5 * scale, -4 * scale, 10 * scale, 32 * scale, 5 * scale);
+    ctx.fill();
     ctx.restore();
   }
 
@@ -454,6 +497,7 @@
   function draw() {
     drawBackground();
     drawCourt();
+    drawOpponentPaddle();
     drawHitZone();
     drawBall();
     drawParticles();
@@ -474,8 +518,8 @@
 
   function pointerToPaddle(event) {
     const rect = canvas.getBoundingClientRect();
-    const x = clamp((event.clientX - rect.left) / rect.width, 0.14, 0.86);
-    const y = clamp((event.clientY - rect.top) / rect.height, 0.56, 0.94);
+    const x = clamp((event.clientX - rect.left) / rect.width, 0.1, 0.9);
+    const y = clamp((event.clientY - rect.top) / rect.height, 0.58, 0.95);
     state.paddle.x = x;
     state.paddle.y = y;
   }
