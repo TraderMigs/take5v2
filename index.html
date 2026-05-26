@@ -28,6 +28,7 @@
   <link rel="stylesheet" href="/styles.css" />
   <link rel="stylesheet" href="/mobile-ui.css" />
   <link rel="stylesheet" href="/search-effects.css" />
+  <link rel="stylesheet" href="/search-intent.css" />
 
   <script type="application/ld+json">
   {
@@ -95,6 +96,7 @@
               <label class="sr-only" for="courtSearchInput">Search for a pickleball game near you</label>
               <input id="courtSearchInput" name="q" type="search" autocomplete="off" placeholder="Search for a pickleball game near you" />
               <button type="submit">Search</button>
+              <button id="useLocationButton" class="location-button" type="button" aria-label="Use my location for pickleball search" title="Use my location">⌖</button>
             </form>
 
             <div class="game-hud" aria-live="polite">
@@ -162,6 +164,7 @@
   </footer>
 
   <script src="/game.js" defer></script>
+  <script src="/pickleball-search.js" defer></script>
   <script src="/search-effects.js" defer></script>
 </body>
 </html>
