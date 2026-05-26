@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Take5 Pickleball Break preview image">
+  <defs>
+    <radialGradient id="g" cx="50%" cy="50%" r="70%">
+      <stop offset="0" stop-color="#103826"/>
+      <stop offset="0.55" stop-color="#06100c"/>
+      <stop offset="1" stop-color="#030504"/>
+    </radialGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="1200" height="630" fill="url(#g)"/>
+  <path d="M410 150h380l250 390H160L410 150Z" fill="none" stroke="#eafff4" stroke-width="5" opacity="0.75" filter="url(#glow)"/>
+  <path d="M305 330h590M292 350h616" stroke="#59ff9a" stroke-width="8" stroke-linecap="round" filter="url(#glow)"/>
+  <circle cx="770" cy="420" r="52" fill="#ffea52" filter="url(#glow)"/>
+  <ellipse cx="500" cy="460" rx="88" ry="112" fill="#59ff9a" opacity="0.8" transform="rotate(-12 500 460)" filter="url(#glow)"/>
+  <rect x="476" y="522" width="46" height="92" rx="18" fill="#111" transform="rotate(-12 500 560)"/>
+  <text x="70" y="105" fill="#59ff9a" font-family="Arial, sans-serif" font-size="28" font-weight="700" letter-spacing="6">FREE PICKLEBALL MINI-GAME</text>
+  <text x="70" y="215" fill="#effff8" font-family="Arial, sans-serif" font-size="82" font-weight="900">Take5 Pickleball</text>
+  <text x="70" y="305" fill="#effff8" font-family="Arial, sans-serif" font-size="82" font-weight="900">Break</text>
+  <text x="75" y="575" fill="#a8bdb4" font-family="Arial, sans-serif" font-size="34">A free 5-minute pickleball mini-game and court finder.</text>
+</svg>
