@@ -1,0 +1,84 @@
+@media (max-width: 720px) {
+  .court-search {
+    max-width: calc(100% - 32px);
+    min-height: 30px;
+    grid-template-columns: minmax(0, 1fr) 56px;
+    gap: 3px;
+    padding: 3px;
+    border-radius: 999px;
+  }
+
+  .court-search input {
+    padding: 4px 7px;
+    font-size: 0.72rem;
+    line-height: 1;
+  }
+
+  .court-search button {
+    padding: 4px 6px;
+    font-size: 0.68rem;
+    line-height: 1;
+  }
+
+  .power-panel {
+    right: 10px;
+    top: 10px;
+    bottom: auto;
+    width: 108px;
+    padding: 6px 8px;
+    border-radius: 12px;
+  }
+
+  .power-panel span {
+    font-size: 0.55rem;
+    letter-spacing: 0.08em;
+  }
+
+  .power-track {
+    height: 6px;
+    margin-top: 5px;
+  }
+
+  .game-message {
+    width: min(74%, 320px);
+    bottom: 10px;
+    padding: 7px 10px;
+    font-size: 0.82rem;
+    line-height: 1.2;
+    border-radius: 12px;
+  }
+
+  .game-hud div {
+    min-width: 48px;
+    padding: 6px 8px;
+    border-radius: 12px;
+  }
+
+  .game-hud span {
+    font-size: 0.55rem;
+  }
+
+  .game-hud strong {
+    font-size: 0.92rem;
+  }
+}
+
+@media (max-width: 430px) {
+  .court-search {
+    max-width: calc(100% - 24px);
+    grid-template-columns: minmax(0, 1fr) 52px;
+  }
+
+  .court-search input {
+    font-size: 0.68rem;
+  }
+
+  .court-search button {
+    font-size: 0.64rem;
+  }
+
+  .game-message {
+    width: min(70%, 280px);
+    font-size: 0.76rem;
+  }
+}
