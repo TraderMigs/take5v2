@@ -1,0 +1,50 @@
+.court-search {
+  grid-template-columns: minmax(0, 1fr) 68px 36px;
+}
+
+.location-button {
+  display: grid;
+  place-items: center;
+  min-width: 0;
+  padding: 6px;
+  border: 1px solid rgba(89, 255, 154, 0.24);
+  border-radius: 999px;
+  color: #eafff4;
+  background: rgba(89, 255, 154, 0.1);
+  cursor: pointer;
+  box-shadow: 0 0 14px rgba(89, 255, 154, 0.1);
+}
+
+.location-button:hover,
+.location-button:focus-visible {
+  outline: none;
+  border-color: rgba(89, 255, 154, 0.55);
+  background: rgba(89, 255, 154, 0.18);
+  box-shadow: 0 0 20px rgba(89, 255, 154, 0.2);
+}
+
+.location-button.is-loading {
+  opacity: 0.72;
+  cursor: wait;
+}
+
+@media (max-width: 720px) {
+  .court-search {
+    grid-template-columns: minmax(0, 1fr) 54px 30px;
+  }
+
+  .location-button {
+    padding: 4px;
+    font-size: 0.72rem;
+  }
+}
+
+@media (max-width: 430px) {
+  .court-search {
+    grid-template-columns: minmax(0, 1fr) 50px 28px;
+  }
+
+  .location-button {
+    font-size: 0.68rem;
+  }
+}
