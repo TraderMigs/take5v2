@@ -1,0 +1,17 @@
+{
+  "name": "Take5 Pickleball Break",
+  "short_name": "Take5",
+  "description": "A free 5-minute pickleball mini-game and court finder.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#030504",
+  "theme_color": "#050807",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
