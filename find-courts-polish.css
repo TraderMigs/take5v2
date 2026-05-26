@@ -1,0 +1,41 @@
+.court-search {
+  background: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.9) !important;
+  box-shadow: 0 0 22px rgba(89, 255, 154, 0.22), 0 0 36px rgba(255, 255, 255, 0.08) !important;
+}
+
+.court-search input {
+  color: #061009 !important;
+  background: #ffffff !important;
+  caret-color: #061009 !important;
+}
+
+.court-search input::placeholder {
+  color: rgba(6, 16, 9, 0.64) !important;
+}
+
+.location-button {
+  color: #061009 !important;
+  border-color: rgba(6, 16, 9, 0.12) !important;
+  background: rgba(89, 255, 154, 0.26) !important;
+}
+
+.location-button:hover,
+.location-button:focus-visible {
+  color: #061009 !important;
+  background: rgba(89, 255, 154, 0.42) !important;
+}
+
+#courtSearch {
+  scroll-margin-top: 240px;
+}
+
+@media (max-width: 720px) {
+  #courtSearch {
+    scroll-margin-top: 280px;
+  }
+
+  .court-search {
+    box-shadow: 0 0 18px rgba(89, 255, 154, 0.18), 0 0 28px rgba(255, 255, 255, 0.08) !important;
+  }
+}
