@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://take5.cc/sitemap.xml
