@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Take5 Pickleball Break | Free 5-Minute Pickleball Mini-Game & Court Finder</title>
+  <meta name="description" content="Play Take5 Pickleball Break, a free dark-mode 5-minute pickleball mini-game with a simple court finder to search pickleball games and courts near you." />
+  <meta name="keywords" content="pickleball game, free pickleball game, pickleball mini game, pickleball court finder, pickleball near me, pickleball games near me, take five break, Take5 Pickleball Break" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="theme-color" content="#050807" />
+  <link rel="canonical" href="https://take5.cc/" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://take5.cc/" />
+  <meta property="og:title" content="Take5 Pickleball Break" />
+  <meta property="og:description" content="A free 5-minute pickleball mini-game and court finder built for quick mental breaks." />
+  <meta property="og:site_name" content="Take5 Pickleball Break" />
+  <meta property="og:image" content="https://take5.cc/og.svg" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Take5 Pickleball Break" />
+  <meta name="twitter:description" content="A free 5-minute pickleball mini-game and court finder." />
+  <meta name="twitter:image" content="https://take5.cc/og.svg" />
+
+  <link rel="preconnect" href="https://www.google.com" />
+  <link rel="stylesheet" href="/styles.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Take5 Pickleball Break",
+    "url": "https://take5.cc/",
+    "applicationCategory": "GameApplication",
+    "operatingSystem": "Any",
+    "description": "A free 5-minute pickleball mini-game and court finder for quick mental breaks.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+</head>
+<body>
+  <div class="page-glow page-glow-a" aria-hidden="true"></div>
+  <div class="page-glow page-glow-b" aria-hidden="true"></div>
+
+  <header class="site-header" aria-label="Site header">
+    <a class="brand" href="/" aria-label="Take5 Pickleball Break home">
+      <span class="brand-mark">5</span>
+      <span>
+        <strong>Take5</strong>
+        <small>Pickleball Break</small>
+      </span>
+    </a>
+    <nav class="top-links" aria-label="Primary navigation">
+      <a href="#play">Play</a>
+      <a href="#courts">Find Courts</a>
+      <a href="https://neuroni.dev" rel="noopener">Build Apps</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="play" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow">Free dark-mode pickleball mini-game</p>
+        <h1 id="hero-title">Take5 Pickleball Break</h1>
+        <p class="hero-subtitle">A free 5-minute pickleball mini-game and court finder.</p>
+      </div>
+
+      <div class="play-layout">
+        <aside class="ad-rail ad-left" aria-label="Future sponsor space">
+          <span>Future Ad Space</span>
+          <strong>Local pickleball gear, clubs, or lessons.</strong>
+        </aside>
+
+        <section class="game-card" aria-label="Take5 Pickleball game">
+          <div class="game-topbar">
+            <div>
+              <p class="mini-label">Quick mental reset</p>
+              <h2>Hit the ball. Clear the net. Keep the streak alive.</h2>
+            </div>
+            <button id="startButton" class="start-button" type="button">Start Game</button>
+          </div>
+
+          <div class="game-stage" id="gameStage">
+            <canvas id="gameCanvas" aria-label="Pickleball mini-game court" role="img"></canvas>
+
+            <form class="court-search" id="courtSearch" aria-label="Search for pickleball games near you">
+              <label class="sr-only" for="courtSearchInput">Search for a pickleball game near you</label>
+              <input id="courtSearchInput" name="q" type="search" autocomplete="off" placeholder="Search for a pickleball game near you" />
+              <button type="submit">Search</button>
+            </form>
+
+            <div class="game-hud" aria-live="polite">
+              <div><span>Score</span><strong id="scoreValue">0</strong></div>
+              <div><span>Streak</span><strong id="streakValue">0</strong></div>
+              <div><span>Best</span><strong id="bestValue">0</strong></div>
+            </div>
+
+            <div class="power-panel" aria-label="Power meter">
+              <span>Power</span>
+              <div class="power-track"><div id="powerFill" class="power-fill"></div></div>
+            </div>
+
+            <div id="gameMessage" class="game-message">Press Start Game.</div>
+          </div>
+
+          <div class="controls-card">
+            <div>
+              <strong>Mouse</strong>
+              <span>Move the paddle hand. Hold click to charge. Release to hit.</span>
+            </div>
+            <div>
+              <strong>Keyboard</strong>
+              <span>Use arrow keys to move. Hold space to charge. Release space to hit.</span>
+            </div>
+          </div>
+        </section>
+
+        <aside class="ad-rail ad-right" aria-label="Featured guide">
+          <span>Build Simple Apps</span>
+          <strong>Learn how to create useful AI-powered tools from zero.</strong>
+          <a href="https://neuroni.dev" rel="noopener">Visit Neuroni.dev</a>
+        </aside>
+      </div>
+    </section>
+
+    <section class="content-grid" id="courts" aria-label="Pickleball information and court finder">
+      <article class="content-card">
+        <h2>Free Pickleball Mini-Game</h2>
+        <p>Take5 Pickleball Break is built for a quick reset. Start the game, track the incoming ball, charge your swing, and return the shot over the neon net.</p>
+      </article>
+      <article class="content-card">
+        <h2>Find Pickleball Courts Near You</h2>
+        <p>Use the court finder inside the net to search for pickleball courts, open play, clubs, leagues, lessons, and games near your current city.</p>
+      </article>
+      <article class="content-card">
+        <h2>How to Play</h2>
+        <p>Move the floating paddle hand toward the yellow pickleball. Charge your hit with click or spacebar. A weak shot hits the net. A perfect shot clears it. Too much power sends it out.</p>
+      </article>
+      <article class="content-card">
+        <h2>Why Take Five?</h2>
+        <p>Sometimes you need a simple break that does not feel like work. This mini-game is designed to be fast, dark, simple, and easy to share.</p>
+      </article>
+    </section>
+
+    <section class="cta-strip" aria-label="Learn to build apps call to action">
+      <p>Want to build simple apps like this?</p>
+      <a href="https://neuroni.dev" rel="noopener">Learn AI app-building from zero at Neuroni.dev</a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Take5 Pickleball Break is a free browser mini-game and pickleball court finder.</p>
+    <p><a href="https://neuroni.dev" rel="noopener">Learn how to code your own apps with AI</a></p>
+  </footer>
+
+  <script src="/game.js" defer></script>
+</body>
+</html>
