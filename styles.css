@@ -263,18 +263,19 @@ h1 {
 
 .court-search {
   position: absolute;
-  left: 50%;
-  top: 43.7%;
+  left: var(--net-search-left, 50%);
+  top: var(--net-search-top, 43.7%);
+  width: var(--net-search-width, min(54%, 470px));
+  height: var(--net-search-height, 38px);
   transform: translate(-50%, -50%);
-  width: min(54%, 470px);
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 76px;
-  gap: 6px;
-  padding: 5px;
+  grid-template-columns: minmax(0, 1fr) 68px;
+  gap: 5px;
+  padding: 4px;
   border-radius: 999px;
-  border: 1px solid rgba(89, 255, 154, 0.3);
-  background: rgba(4, 10, 8, 0.76);
-  box-shadow: 0 0 22px rgba(89, 255, 154, 0.14), inset 0 0 16px rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(89, 255, 154, 0.28);
+  background: rgba(4, 10, 8, 0.7);
+  box-shadow: 0 0 18px rgba(89, 255, 154, 0.13), inset 0 0 12px rgba(255, 255, 255, 0.02);
   backdrop-filter: blur(8px);
   scroll-margin-top: 170px;
 }
@@ -285,8 +286,8 @@ h1 {
   outline: none;
   color: var(--text);
   background: transparent;
-  padding: 8px 11px;
-  font-size: 0.9rem;
+  padding: 6px 10px;
+  font-size: 0.86rem;
 }
 
 .court-search input::placeholder {
@@ -294,8 +295,8 @@ h1 {
 }
 
 .court-search button {
-  padding: 8px 10px;
-  font-size: 0.84rem;
+  padding: 6px 8px;
+  font-size: 0.8rem;
   min-width: 0;
 }
 
@@ -561,21 +562,19 @@ button.game-message {
   }
 
   .court-search {
-    top: 43%;
-    width: 84%;
-    grid-template-columns: minmax(0, 1fr) 72px;
+    grid-template-columns: minmax(0, 1fr) 64px;
     border-radius: 999px;
   }
 
   .court-search input {
-    font-size: 0.82rem;
-    padding: 8px 9px;
+    font-size: 0.78rem;
+    padding: 6px 8px;
   }
 
   .court-search button {
     width: auto;
-    font-size: 0.8rem;
-    padding: 8px 9px;
+    font-size: 0.76rem;
+    padding: 6px 8px;
   }
 
   .game-hud {
