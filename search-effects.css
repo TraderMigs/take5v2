@@ -1,0 +1,20 @@
+.court-search button {
+  animation: take5SearchGlow 6.5s ease-in-out infinite;
+}
+
+@keyframes take5SearchGlow {
+  0%, 100% {
+    box-shadow: 0 0 14px rgba(89, 255, 154, 0.18), 0 0 28px rgba(89, 255, 154, 0.14);
+    filter: brightness(0.92) saturate(0.96);
+  }
+  50% {
+    box-shadow: 0 0 22px rgba(89, 255, 154, 0.34), 0 0 46px rgba(89, 255, 154, 0.24);
+    filter: brightness(1.08) saturate(1.08);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .court-search button {
+    animation: none;
+  }
+}
