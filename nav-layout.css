@@ -1,0 +1,61 @@
+.top-links {
+  justify-content: center;
+  text-align: center;
+}
+
+.find-courts-link {
+  min-width: 148px;
+  color: #061009 !important;
+  border-color: rgba(89, 255, 154, 0.48) !important;
+  background: linear-gradient(135deg, var(--green), #eafff4) !important;
+  box-shadow: 0 0 24px rgba(89, 255, 154, 0.22);
+  font-weight: 900;
+}
+
+.find-courts-link:hover,
+.find-courts-link:focus-visible {
+  box-shadow: 0 0 34px rgba(89, 255, 154, 0.34);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 720px) {
+  .top-links {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .find-courts-link {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: min(76vw, 360px);
+    min-width: 0;
+    padding: 11px 18px !important;
+    font-size: 0.95rem !important;
+  }
+
+  .visitor-counter {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: min(88vw, 520px);
+    justify-content: center !important;
+  }
+}
+
+@media (max-width: 430px) {
+  .top-links {
+    gap: 8px;
+  }
+
+  .top-links a:not(.find-courts-link) {
+    padding: 8px 10px;
+    font-size: 0.8rem;
+  }
+
+  .find-courts-link {
+    width: min(82vw, 330px);
+  }
+}
